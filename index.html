@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трекер задач</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Трекер задач</h1>
+            <button class="add-category-btn">
+                <i class="fas fa-plus"></i> Новая категория
+            </button>
+        </header>
+
+        <div class="categories-container">
+            <!-- Категории будут добавлены через JavaScript -->
+        </div>
+
+        <button class="settings-btn">
+            <i class="fas fa-cog"></i>
+        </button>
+    </div>
+
+    <!-- Модальное окно настроек -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <h2>Настройки</h2>
+            <div class="settings-section">
+                <h3>Тема</h3>
+                <div class="theme-options">
+                    <div class="theme-option">
+                        <input type="radio" id="lightTheme" name="theme" value="light">
+                        <label class="theme-option-content" for="lightTheme">
+                            <i class="fas fa-sun"></i>
+                            <span>Светлая</span>
+                        </label>
+                    </div>
+                    <div class="theme-option">
+                        <input type="radio" id="darkTheme" name="theme" value="dark">
+                        <label class="theme-option-content" for="darkTheme">
+                            <i class="fas fa-moon"></i>
+                            <span>Темная</span>
+                        </label>
+                    </div>
+                    <div class="theme-option">
+                        <input type="radio" id="motherLoveTheme" name="theme" value="mother-love">
+                        <label class="theme-option-content" for="motherLoveTheme">
+                            <i class="fas fa-heart"></i>
+                            <span>MotherLove</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn cancel">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для ввода пароля -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <h2>Введите пароль</h2>
+            <input type="password" id="themePassword" placeholder="Введите пароль для темы">
+            <div class="modal-buttons">
+                <button class="btn cancel">Отмена</button>
+                <button class="btn save">Подтвердить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для создания категории -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <h2>Новая категория</h2>
+            <input type="text" id="categoryTitle" placeholder="Название категории" required>
+            <div class="modal-buttons">
+                <button class="btn cancel">Отмена</button>
+                <button class="btn save">Создать</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для создания задачи -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <h2>Новая задача</h2>
+            <input type="text" id="taskTitle" placeholder="Название задачи" required>
+            <textarea id="taskDescription" placeholder="Описание задачи"></textarea>
+            <div class="modal-buttons">
+                <button class="btn cancel">Отмена</button>
+                <button class="btn save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="moveTaskModal">
+        <div class="modal-content">
+            <h2>Переместить задачу</h2>
+            <div class="select-wrapper">
+                <select id="targetCategory" class="custom-select">
+                    <option value="">Выберите категорию</option>
+                </select>
+                <div class="select-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn cancel">Отмена</button>
+                <button class="btn save">Переместить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для подтверждения удаления -->
+    <div id="deleteConfirmModal" class="modal">
+        <div class="modal-content">
+            <h2>Подтверждение удаления</h2>
+            <p id="deleteConfirmText"></p>
+            <div class="modal-buttons">
+                <button class="btn cancel">Отмена</button>
+                <button class="btn delete">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для подтверждения удаления категории -->
+    <div id="deleteCategoryConfirmModal" class="modal">
+        <div class="modal-content">
+            <h2>Подтверждение удаления категории</h2>
+            <p id="deleteCategoryConfirmText"></p>
+            <div class="modal-buttons">
+                <button class="btn cancel">Отмена</button>
+                <button class="btn delete">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
