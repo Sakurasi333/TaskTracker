@@ -114,6 +114,29 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
+/* Базовые стили для больших экранов */
+body {
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Медиазапрос для экранов меньше 1200px */
+@media (max-width: 1200px) {
+  body {
+    margin: 15px;
+    padding: 15px;
+  }
+}
+
+/* Медиазапрос для экранов меньше 800px */
+@media (max-width: 800px) {
+  body {
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+
 .slider:after {
     content: "🌙";
     position: absolute;
